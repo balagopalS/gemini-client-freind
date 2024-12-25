@@ -14,7 +14,7 @@ const Main = () => {
     return (
     <div className='main'>
         <div className='nav'>
-            <p>Balagopal's Stand-In Bot</p>
+            <p>USER_NAME Stand-In Bot</p>
             <img src={assets.user_icon_two} alt="" />
         </div>
         <div className="main-container">
@@ -26,19 +26,19 @@ const Main = () => {
                     <p>How can I help you?</p>
                 </div>
                 <div className="cards">
-                <div className="card" onClick={() => handleCardClick("Tell me about Balagopal and how do I reach him?")}>
+                <div className="card" onClick={() => handleCardClick("Tell me about USER_NAME and how do I reach him?")}>
                         <p>Who is Balagopal?</p>
                         <img src={assets.compass_icon} alt="" />
                     </div>
-                    <div className="card" onClick={() => handleCardClick("Tell me about Balagopal's work experience?")}>
+                    <div className="card" onClick={() => handleCardClick("Tell me about USER_NAME's work experience?")}>
                         <p>What is his experience?</p>
                         <img src={assets.bulb_icon} alt="" /> 
                     </div>
-                    <div className="card" onClick={() => handleCardClick("Let's discuss work opportunities with Balagopal, what roles is he suitable for?")}>
+                    <div className="card" onClick={() => handleCardClick("Let's discuss work opportunities with USER_NAME, what roles is he suitable for?")}>
                         <p>What can he do?</p>
                         <img src={assets.message_icon} alt="" />
                     </div>
-                    <div className="card" onClick={() => handleCardClick("What are Balagopal's credentials, programming, hybrid and technical skills?")}>
+                    <div className="card" onClick={() => handleCardClick("What are USER_NAME's credentials, programming, hybrid and technical skills?")}>
                         <p>Skills and credentials</p>
                         <img src={assets.code_icon} alt="" />
                     </div>
