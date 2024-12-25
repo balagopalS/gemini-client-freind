@@ -6,12 +6,16 @@ import { Context } from '../../context/context'
 const Main = () => {
 
     const {onSent,recentPrompt,showResult,loading,resultData,setInput,input} = useContext(Context)
-  
+    const handleCardClick = (prompt) => {
+        console.log("Card clicked with prompt:", prompt)
+        setInput(prompt)
+        onSent(prompt)
+    }
     return (
     <div className='main'>
         <div className='nav'>
             <p>Balagopal's Stand-In Bot</p>
-            <img src={assets.user_icon} alt="" />
+            <img src={assets.user_icon_two} alt="" />
         </div>
         <div className="main-container">
 
@@ -22,20 +26,20 @@ const Main = () => {
                     <p>How can I help you?</p>
                 </div>
                 <div className="cards">
-                    <div className="card">
+                <div className="card" onClick={() => handleCardClick("Tell me about Balagopal and how do I reach him?")}>
                         <p>Who is Balagopal?</p>
                         <img src={assets.compass_icon} alt="" />
                     </div>
-                    <div className="card">
-                        <p>Portfolio</p>
+                    <div className="card" onClick={() => handleCardClick("Tell me about Balagopal's work experience?")}>
+                        <p>What is his experience?</p>
                         <img src={assets.bulb_icon} alt="" /> 
                     </div>
-                    <div className="card">
-                        <p>Lets' talk about work</p>
+                    <div className="card" onClick={() => handleCardClick("Let's discuss work opportunities with Balagopal, what roles is he suitable for?")}>
+                        <p>What can he do?</p>
                         <img src={assets.message_icon} alt="" />
                     </div>
-                    <div className="card">
-                        <p>Programming and technical bridge</p>
+                    <div className="card" onClick={() => handleCardClick("What are Balagopal's credentials, programming, hybrid and technical skills?")}>
+                        <p>Skills and credentials</p>
                         <img src={assets.code_icon} alt="" />
                     </div>
                 </div>

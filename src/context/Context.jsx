@@ -29,7 +29,6 @@ const ContextProvider = (props) => {
     setShowResult(true);
 
     let response;
-
     if (prompt !== undefined){
       response = await runChat(prompt);
       setRecentPrompt(prompt);
@@ -39,6 +38,7 @@ const ContextProvider = (props) => {
       response = await runChat(input);
     }
     
+    // First handle bold text
     let responseArray = response.split("**");
     let newResponse = [];
     for (let i = 0; i < responseArray.length; i++) {
@@ -47,13 +47,23 @@ const ContextProvider = (props) => {
         } else {
           newResponse += "<b>"+responseArray[i]+"</b>";
         }
-      }
-    let newResponse2 = newResponse.split("*").join("</br>");
-    let newResponseArray = newResponse2.split(" ");
+    }
+
+    // Handle links and emails
+    let processedResponse = newResponse
+      // Convert URLs to clickable links
+      .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color: #0066cc; text-decoration: underline;">$1</a>')
+      // Style email addresses
+      .replace(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g, '<span style="color: #ff6600;">$1</span>')
+      // Keep the existing line break handling
+      .split("*").join("</br>");
+
+    let newResponseArray = processedResponse.split(" ");
     for (let i = 0; i < newResponseArray.length; i++) {
       const nextWord = newResponseArray[i];
       delayPara(i,nextWord+" ");
     }
+    
     setLoading(false);
     setInput("");
   };
