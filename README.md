@@ -1,6 +1,6 @@
 
-
 # Gemini Profile Glazer
+=======
 
 Welcome to **Gemini Profile Glazer**—a little POC I made to Sell a profile (mine) to people.
 ---
