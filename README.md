@@ -1,5 +1,5 @@
 
-# Gemini Profile Glazer
+# Gemini Profile Glazer (Readme's written by Gemini, pls bare with me)
 =======
 
 Welcome to **Gemini Profile Glazer**—a little POC I made to Sell a profile (mine) to people.
